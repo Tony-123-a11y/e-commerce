@@ -91,7 +91,8 @@ const Home = () => {
     <div>
       <ToastContainer />
       <div className="container xl:max-w-7xl mx-auto mt-10 max-sm:mt-2 ">
-        <div className="bg-[url('bgSlick.jpg')] bg-contain bg-center">
+        <div className=" bg-contain relative bg-center">
+<img src="bgSlick.jpg" alt="" className='absolute w-full h-full left-0 top-0'/>
             <Slider {...settingTwo}>
               {
               smartPhoneArr.map((object)=>{
