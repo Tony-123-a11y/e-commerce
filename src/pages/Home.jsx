@@ -29,10 +29,11 @@ import { toast,ToastContainer } from 'react-toastify';
   )
 }
 const Home = () => {
-  const {filterArr,skeleton,search,categoryArr}= useSelector((slice)=>slice.home)
+  const {skeleton,categoryArr,productArr}= useSelector((slice)=>slice.home)
   const {wishListArr}=useSelector((slice)=>slice.cart)
+  const smartPhoneArr= productArr.filter((ele)=>ele.category=='laptops')
 // console.log(filterArr)
-  // console.log(productArr) 
+  console.log(productArr) 
   const settings={
     speed:500,
     slidesToShow:4,
@@ -40,6 +41,30 @@ const Home = () => {
     slidesToScroll:4,
     prevArrow:<LeftArrow/>,
     nextArrow:<RightArrow/>,
+  }
+  const settingTwo={
+    speed:1000,
+    slidesToShow:1,
+    slidesToScroll:1,
+    infinite:true,
+    dots:true,
+
+    responsive:[
+      {
+        breakpoint:1024,
+        settings:{
+        slidesToShow:1,
+        slidesToScroll:1
+        }
+      },
+      {
+        breakpoint:765,
+        settings:{
+        slidesToShow:1,
+        slidesToScroll:1
+        }
+      },
+    ]
   }
   
 
@@ -65,9 +90,26 @@ const Home = () => {
   return (
     <div>
       <ToastContainer />
-      <div className="container xl:max-w-7xl mx-auto mt-10">
+      <div className="container xl:max-w-7xl mx-auto mt-10 max-sm:mt-2 ">
+        <div className="bg-[url('bgSlick.jpg')] bg-contain bg-center">
+            <Slider {...settingTwo}>
+              {
+              smartPhoneArr.map((object)=>{
+                  return <div>
+                   <Link to={'/details'} state={object} className='h-100 flex items-center justify-center px-10 max-lg:h-80 max-md:h-70 max-sm:h-60 max-sm:px-5'>
+                    <div className='w-[60%]  p-25 py-20 backdrop-blur-md rounded-md max-lg:p-20 max-md:p-10 max-sm:p-5'>
+                      <h1 className='text-4xl font-bold text-white tracking-wide leading-12 max-lg:text-2xl max-lg:leading-8 max-md:text-xl max-md:leading-6 max-sm:text-base '>{object.title}</h1>
+                      <button className='px-4 mt-4 uppercase text-sm py-1  font-bold bg-white rounded-xl max-lg:font-semibold max-sm:mt-2 max-sm:text-[12px]'>Buy Now</button>
+                    </div>
+                   <div className='w-[40%]'><img src={object.thumbnail} className='h-full w-full  object-cover mx-auto '/></div>
+                   </Link>
+                   </div>
+              })
+            }
+            </Slider>
+        </div>
       
-      <div className="grid grid-cols-4  gap-4 max-xl:grid-cols-3 max-lg:grid-cols-2  max-sm:gap-1">
+      <div className="grid grid-cols-4  gap-4 max-xl:grid-cols-3 max-lg:grid-cols-2  max-sm:gap-1 mt-6">
       
         {
 

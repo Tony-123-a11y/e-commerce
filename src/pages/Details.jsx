@@ -44,9 +44,9 @@ const Details = () => {
            </div>
         
           </div>
-          <h1 className='text-md mt-4 mb-2 text-red-800 font-bold font-font-head underline uppercase'>Description</h1>
+          <h1 className='text-md mt-4 mb-0.5 text-blue-800 font-bold font-font-head  uppercase'>Description</h1>
           <p className='max-sm:text-sm leading-5 tracking-wide'>{object.description}</p>
-          <h1 className='text-md mt-4 mb-2 text-red-800 font-bold font-font-head underline uppercase'>Details</h1>
+          <h1 className='text-md mt-4 mb-0.5 text-blue-800 font-bold font-font-head  uppercase'>Details</h1>
           <ul>
             <li className='font-semibold flex items-center justify-start gap-3'>Dimensions: <span className='font-normal text-gray-700'>{dim.width}W x {dim.height}H x {dim.depth}D</span></li>
             <li className='font-semibold flex items-center justify-start gap-3'>Stock:  <span className='font-normal text-gray-700'>{object.stock}</span></li>
@@ -64,7 +64,7 @@ const Details = () => {
             dispatch(add(object))}} className='border border-blue-800 rounded-sm flex-grow py-1.5  text-blue-800 transition capitalize hover:bg-blue-700 hover:border-blue-700 flex items-center justify-center gap-2 font-bold hover:text-white font-font-head cursor-pointer'><span className=' text-xl '><MdAddShoppingCart /></span> cart</button>
            </div>
           
-           <h1 className='text-md mt-4 mb-2 text-red-800 font-bold font-font-head underline uppercase'>Rating & Reviews</h1>
+           <h1 className='text-md mt-4 mb-0.5 text-blue-800 font-bold font-font-head  uppercase'>Rating & Reviews</h1>
            {reviewArray.map((review,i)=>{
                   return <div className='row relative justify-between items-start gap-16 mt-6 after:content-[""] after:absolute after:bottom-[-13px] after:left-0 after:w-full after:h-0.5 after:bg-gray-200'>
                     
