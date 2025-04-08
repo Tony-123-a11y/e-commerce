@@ -32,7 +32,7 @@ export const homeSlice = createSlice({
    },
    search:(state,action)=>{
     if(!action.payload){
-      window.location.href='http://localhost:5173/'
+      window.location.href='https://e-commerce-plum-ten-99.vercel.app/'
     }
      state.filterArr=state.productArr.filter((product)=>product.category.toLowerCase().includes(action.payload.toLowerCase()) || product.title.toLowerCase().includes(action.payload.toLowerCase()))
      
