@@ -43,7 +43,7 @@ let shipCharge= Math.round(sum/10)
           
             <Link to={'/details'} state={object}>
            <div className="flex items-center justify-center ">
-              <img src={object.thumbnail} alt=""className='bg-blue-50 h-[250px] object-contain  max-sm:h-[200px]'/>  
+              <img src={object.thumbnail} alt=""className='bg-blue-50 h-[250px] object-contain  max-sm:h-[180px]'/>  
            </div>
            </Link>
            <div className=" px-8  max-sm:px-4 w-full max-sm:py-4">
@@ -75,7 +75,7 @@ let shipCharge= Math.round(sum/10)
         } 
         </div>
         {/* Price Total */}
-        <div className="w-1/3 px-8  bg-white py-8 sticky border border-gray-200 top-20 max-sm:w-full max-sm:mt-2">
+        <div className="w-1/3 px-8  bg-white py-8 sticky border border-gray-200 top-20 max-sm:w-full max-sm:mt-2 max-sm:px-2 max-sm:py-2">
           <ul className='space-y-2'>
             <li className='font-font-head'><span className='font-semibold mr-2'>Subtotal:</span>&#8377;{Math.round(sum)}</li>
             <li className='font-font-head'><span className='font-semibold mr-2'>Tax:</span>&#8377;{tax}</li>

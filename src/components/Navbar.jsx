@@ -20,10 +20,10 @@ function Navbar() {
       <nav className='px-10  shadow-md py-4 font-primary  max-lg:px-5'>
         <div className="flex items-center justify-between   gap-4  max-md:pb-2 max-md:border-b-1 max-md:border-b-gray-300">
           <div className="flex items-center  justify-start  w-full max-w-180 gap-4 max-lg:gap-2 ">
-            <div className="row justify-start gap-2   min-w-33">
+            <Link to={'/'} className="row justify-start gap-2   min-w-33">
             <span className='text-2xl'><IoStorefrontSharp/></span>
             <h1 className='text-xl font-bold '><span className='text-blue-600'>E-</span>Bazzar</h1>
-            </div>
+            </Link>
             {/* input */}
             
             <div className="flex items-center justify-center border border-gray-400 flex-grow relative rounded-lg max-md:hidden">
